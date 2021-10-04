@@ -1,0 +1,59 @@
+//----------//
+// .twitter //
+//----------//
+.twitter
+    overflow: hidden
+    padding-bottom: 100px
+    background-color: #f7f7f7
+
+    &__body
+        position: relative
+        max-width: 1000px
+        margin: 0 auto
+        padding: 60px 0
+
+    &__item
+        margin-top: 60px
+        text-align: center
+
+    &__icon
+        display: inline-block
+        margin-bottom: 10px
+
+    &__title
+        font-size: em(18)
+        font-weight: 400
+        letter-spacing: 1px
+        color: $dark-color
+
+        span
+            color: $main-color
+
+    &__descr
+        font-size: em(24)
+        line-height: em(25)
+        font-style: italic
+        color: $main-color
+
+
+//---------//
+// .slider //
+//---------//
+.slick-dotted.slick-slider
+    margin-bottom: 0
+
+.slick-dots
+    bottom: -15px
+
+.slick-dots li,
+    width: 12px
+    height: 12px
+    border: 1px solid #a9afb3
+    border-radius: 100%
+    transition: all 0.3s ease
+
+.slick-dots .slick-active
+    background-color: #a9afb3
+
+.slick-dots li button
+    display: none

@@ -1,0 +1,61 @@
+//------------//
+// .subscribe //
+//------------//
+.subscribe
+    padding: 100px 0
+
+    &__content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+    &__title
+        margin: 40px 0
+        font-size: em(24)
+        font-weight: 400
+        color: $main-color
+
+    &__form
+        display: flex
+        justify-content: center
+        width: 100%
+
+    &__email
+        flex: 0 0 400px
+        margin-right: 5px
+        padding: 20px
+        font-size: 20px
+        font-style: italic
+        color: #929292
+        background-color: #fff
+        border: 1px solid #d3d7d9
+
+    &__button
+        flex: 0 0 120px
+        font-family: $main-font
+        font-size: em(24)
+        font-weight: 100
+        color: #fff
+        background-color: $accent-color
+        border: none
+        cursor: pointer
+        transition: all 0.3s ease
+
+        &:hover
+            background-color: #25976b
+
+
+@media screen and (max-width: 500px)
+    .subscribe
+
+        &__form
+            flex-direction: column
+
+        &__email
+            flex: 70px
+            margin-right: 0
+            margin-bottom: 10px
+
+        &__button
+            flex: 0 0 70px

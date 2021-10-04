@@ -1,0 +1,87 @@
+//-----------//
+// .bicycles //
+//-----------//
+.bicycles
+
+    &__row
+        display: flex
+        flex-wrap: wrap
+
+        &--reverse
+            .bicycles__column--big
+                order: 1
+
+    &__column
+        position: relative
+        flex: 0 1 33.333%
+
+        &--big
+            flex: 0 1 66.666%
+
+    &__logo
+        z-index: 5
+        opacity: 1
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: all 0.3s ease
+
+
+@media screen and (max-width: 1100px)
+    .bicycles
+
+        &__column
+          flex: 0 1 100%
+
+        &__logo
+            display: none
+
+
+//-----------------//
+// .bicycles-block //
+//-----------------//
+.bicycles-block
+    text-align: center
+
+    &--descr
+        position: relative
+        padding: 60px 35px
+
+        &::after
+            content: ""
+            z-index: 5
+            position: absolute
+            bottom: -10px
+            left: 50%
+            transform: translateX(-50%)
+            width: 0
+            height: 0
+            margin-right: -10px
+            border-top: 10px solid #ffffff
+            border-right: 20px solid transparent
+            border-left: 20px solid transparent
+
+    &--image
+        display: block
+        width: 100%
+        padding-bottom: 35%
+        background-size: cover
+        background-position: center center
+        background-repeat: no-repeat
+
+    &__descr
+        position: relative
+        font-size: em(16)
+        text-align: left
+
+        &::after
+            content: ''
+            position: absolute
+            bottom: -30px
+            left: 50%
+            transform: translateX(-50%)
+            display: block
+            width: 50px
+            height: 1px
+            background-color: #ebebeb
