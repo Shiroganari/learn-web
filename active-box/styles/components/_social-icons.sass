@@ -1,0 +1,28 @@
+//---------------//
+// .social-icons //
+//---------------//
+.social-icons
+    display: flex
+
+    &__link
+        display: block
+        margin-right: 5px
+        padding: 10px
+        border: 2px solid #c6cacc
+        transition: border-color 0.3s ease
+
+        &:last-child
+            margin-right: 0
+
+        &:hover
+            border-color: $accent-color
+
+            .social-icons__icon
+                fill: $accent-color
+
+    &__icon
+        display: block
+        width: 20px
+        height: 20px
+        fill: #c6cacc
+        transition: fill 0.3s ease

@@ -1,0 +1,48 @@
+//-----------//
+// .features //
+//-----------//
+.features
+    padding: 120px 0 40px
+
+    &__content
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+
+//----------------//
+// .features-item //
+//----------------//
+.features-item
+    flex: 0 0 30%
+    margin-bottom: 60px
+    font-size: em(14)
+    text-align: center
+
+    &__title
+        margin-top: 30px
+        margin-bottom: 20px
+        font-size: em(18)
+        text-transform: uppercase
+        color: $dark-color
+
+    &__descr
+        line-height: em(25)
+
+
+@media screen and (max-width: 1023px)
+    .features__content
+        justify-content: space-around
+
+    .features-item
+        flex: 0 0 35%
+
+@media screen and (max-width: 800px)
+    .features
+        padding: 80px 0 10px
+
+    .features-item
+        flex: 0 0 45%
+
+@media screen and (max-width: 600px)
+    .features-item
+        flex: 0 0 80%

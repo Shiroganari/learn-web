@@ -1,0 +1,73 @@
+//-------//
+// .team //
+//-------//
+.team
+    padding: 100px 0
+
+    &__content
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+
+
+//------------//
+// .team-item //
+//------------//
+.team-item
+    width: 25%
+    padding: 0 15px
+
+    &__photo
+        display: block
+        max-width: 100%
+        height: auto
+        margin: 0 auto
+
+    &__name
+        margin-bottom: 10px
+        font-size: em(22)
+        font-weight: 400
+        color: $dark-color
+
+    &__prof
+        margin-top: 0
+        margin-bottom: 20px
+        font-size: em(15)
+        text-transform: uppercase
+        color: $accent-color
+
+    &__descr
+        margin-bottom: 25px
+        font-size: em(15)
+        line-height: em(22)
+
+    &__social
+        display: flex
+
+
+@media screen and (max-width: 1023px)
+    .team
+        padding-bottom: 0
+
+    .team-item
+        width: 50%
+        margin-bottom: 100px
+        text-align: center
+
+        &__social
+            justify-content: center
+
+@media screen and (max-width: 767px)
+    .team
+        padding-bottom: 30px
+
+    .team__content
+        justify-content: center
+
+    .team-item
+        width: 70%
+        margin-bottom: 70px
+
+@media screen and (max-width: 500px)
+    .team-item
+        width: 100%
