@@ -1,4 +1,7 @@
-export default function buildLoaders() {
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
+
+export default function buildLoaders({ isDev }: BuildOptions) {
   const tsLoader = {
     test: /\.tsx$/,
     use: 'ts-loader',
@@ -8,8 +11,19 @@ export default function buildLoaders() {
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-      'style-loader',
-      'css-loader',
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            namedExport: false,
+            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+            localIdentName: isDev
+              ? '[path][name]__[local]--[hash:base64:5]'
+              : '[hash:base64:8]'
+          }
+        }
+      },
       'sass-loader'
     ]
   };
