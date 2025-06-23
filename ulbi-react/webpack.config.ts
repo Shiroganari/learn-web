@@ -5,7 +5,7 @@ import { BuildEnv, BuildMode, BuildOptions, BuildPaths } from './config/build/ty
 
 export default (env: BuildEnv): webpack.Configuration => {
     const paths: BuildPaths = {
-        entry: path.resolve(__dirname, 'src', 'index.ts'),
+        entry: path.resolve(__dirname, 'src', 'index.tsx'),
         output: path.resolve(__dirname, 'build'),
         template: path.resolve(__dirname, 'public', 'index.html'),
     };
