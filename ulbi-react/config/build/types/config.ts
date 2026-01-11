@@ -4,6 +4,7 @@ export interface BuildPaths {
     entry: string;
     output: string;
     template: string;
+    src: string;
 }
 
 export interface BuildOptions {
