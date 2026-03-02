@@ -5,12 +5,11 @@ import '@app/styles/index.scss';
 import { Header } from '@widgets/Header';
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
       <Header />
-      <button onClick={toggleTheme}>Toggle theme</button>
       <AppRouter />
     </div>
   );
