@@ -3,7 +3,7 @@ import { SidebarProps } from '@widgets/Sidebar/model/props';
 import { useState } from 'react';
 import cls from './Sidebar.module.scss';
 import { ThemeSwitcher } from '@shared/ui/ThemeSwitcher';
-import { LangSwitcher } from '@shared/ui/LangSwitcher/ui/LangSwitcher';
+import { LangSwitcher } from '@shared/ui/LangSwitcher';
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
