@@ -5,7 +5,7 @@ import { AppLink } from '@shared/ui/AppLink';
 import { useTranslation } from 'react-i18next';
 
 export const Header = ({ className }: HeaderProps) => {
-  const {t, i18n} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <header className={classNames(styles.header, {}, [className])}>
