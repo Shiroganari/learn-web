@@ -1,1 +1,1 @@
-export { default as HomePage } from './ui/HomePage.async';
+export { default as HomePage } from './ui/HomePage';

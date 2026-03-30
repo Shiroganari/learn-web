@@ -1,24 +1,40 @@
-import { AboutPage } from '@pages/AboutPage';
-import { HomePage } from '@pages/HomePage';
-import { RouteProps } from 'react-router-dom';
+import { RouteObject } from 'react-router-dom';
 
-export enum Routes {
+export enum AppRoutes {
   HOME = 'home',
   ABOUT = 'about',
+  NOT_FOUND = 'not_found',
 }
 
-export const RoutePath: Record<Routes, string> = {
-  [Routes.HOME]: '/',
-  [Routes.ABOUT]: '/about',
+export const RoutePath: Record<AppRoutes, string> = {
+  [AppRoutes.HOME]: '/',
+  [AppRoutes.ABOUT]: '/about',
+  [AppRoutes.NOT_FOUND]: '*',
 };
 
-export const RouteConfig: Record<Routes, RouteProps> = {
-  [Routes.HOME]: {
-    path: RoutePath.home,
-    element: <HomePage />,
+const withDelay = <T,>(fn: () => Promise<T>, delay: number): Promise<T> =>
+  new Promise(resolve => setTimeout(() => resolve(fn()), delay));
+
+export const routerConfig: RouteObject[] = [
+  {
+    path: RoutePath[AppRoutes.HOME],
+    lazy: () => withDelay(
+      () => import('@pages/HomePage/ui/HomePage').then(m => ({ Component: m.default })),
+      1500,
+    ),
   },
-  [Routes.ABOUT]: {
-    path: RoutePath.about,
-    element: <AboutPage />,
+  {
+    path: RoutePath[AppRoutes.ABOUT],
+    lazy: () => withDelay(
+      () => import('@pages/AboutPage/ui/AboutPage').then(m => ({ Component: m.default })),
+      1500,
+    ),
   },
-};
+  {
+    path: RoutePath[AppRoutes.NOT_FOUND],
+    lazy: () => withDelay(
+      () => import('@pages/NotFoundPage/ui/NotFoundPage').then(m => ({ Component: m.default })),
+      1500,
+    ),
+  },
+];

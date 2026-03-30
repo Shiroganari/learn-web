@@ -1,19 +1,16 @@
-import { RouteConfig } from '@shared/config/routeConfig/routeConfig';
-import { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { PageLoader } from '@widgets/PageLoader';
+import { Outlet, useNavigation } from 'react-router-dom';
 
 export const AppRouter = () => {
+  const { state } = useNavigation();
+
+  if (state === 'loading') {
+    return <PageLoader />;
+  }
+
   return (
-    <Suspense fallback={'...Loading'}>
-      <Routes>
-        {Object.values(RouteConfig).map(({ element, path }) => (
-          <Route
-            key={path}
-            element={<div className="page-wrapper">{element}</div>}
-            path={path}
-          />
-        ))}
-      </Routes>
-    </Suspense>
+    <div className="page-wrapper">
+      <Outlet />
+    </div>
   );
 };
