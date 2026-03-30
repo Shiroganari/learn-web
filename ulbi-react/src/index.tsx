@@ -8,13 +8,16 @@ import { routerConfig } from '@shared/config/routeConfig/routeConfig';
 import { PageLoader } from '@widgets/PageLoader';
 
 import '@shared/config/i18n/i18n';
+import { ErrorBoundary } from '@app/providers/ErrorBoundary';
 
 const router = createBrowserRouter([
   {
     element: (
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
     ),
     children: routerConfig,
   },

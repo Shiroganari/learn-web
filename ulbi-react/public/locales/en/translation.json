@@ -2,5 +2,7 @@
   "Language": "Русский",
   "Homepage": "Homepage",
   "About": "About us",
-  "Not found": "Page not found"
+  "Not found": "Page not found",
+  "Error page title": "Unexpected error occured",
+  "Update page": "Update page"
 }
